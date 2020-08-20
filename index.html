@@ -15,7 +15,7 @@
     <meta property="og:site_name" content="freeipinfo.github.io" />
     <script type="application/ld+json">
     {"@type":"WebSite","headline":"freeipinfo.github.io","url":"https://freeipinfo.github.io/","description":"Free IP information inquiry and sharing","name":"freeipinfo.github.io","@context":"https://schema.org"}</script>
-    <link rel="stylesheet" href="/assets/css/style.min.css?v=3f0e0fd60fa962dc9280d14b277767f90650a5fe">
+    <link rel="stylesheet" href="./assets/css/style.min.css?v=3f0e0fd60fa962dc9280d14b277767f90650a5fe">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
 </head>
 <body>
@@ -23,7 +23,9 @@
         <h1 id="freeipinfogithubio">freeipinfo.github.io</h1>
         <p>Free IP information inquiry and sharing.</p>
         <p>You'r IP information is below</p>
-        <p>IP: <input type="text" name="ip"></p>
+        <p id="box_info_mixedcontents" class="d-none border border-blue rounded-2 box-shadow-large bg-blue-light p-2">Please authorize HTTP data call to check IP information. Just allow "unsafe content" in your browser. Only HTTP connection required for IP information inquiry occurs, and no other information about you is transmitted to the outside. Please check the documentation written on adobe.com for detailed setup instructions. <a href="https://docs.adobe.com/content/help/ko-KR/target/using/experiences/vec/troubleshoot-composer/mixed-content.translate.html" target="_blank">Go to Adobe.com</a></p>
+        <p id="box_info_location" class="d-none border border-blue rounded-2 box-shadow-large bg-blue-light p-2">To check local information, you need to allow location permission in your browser.</p>
+        <p>IP: <input type="text" name="ip"> </p>
         <p>ISP: <input type="text" name="isp"></p>
         <p>Country Name: <input type="text" name="country_name"></p>
         <p>Country Code: <input type="text" name="country_code"></p>
@@ -34,6 +36,6 @@
         <p>Longitude: <input type="text" name="longitude"></p>
         <input type="submit" value="Share This IP Information" class="anim-fade-in">
     </div>
-    <script src="/assets/js/app.js?v=3f0e0fd60fa962dc9280d14b277767f90650a5fe" ></script>
+    <script src="./assets/js/app.js?v=3" ></script>
 </body>
 </html>

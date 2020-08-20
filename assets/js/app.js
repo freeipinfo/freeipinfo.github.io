@@ -55,16 +55,42 @@ jQuery(function($){
         });
     }
     // https://ip-api.com/docs/api:json
+
+    const callback = function(data) {
+        set_ip(data.query);
+        set_isp(data.isp);
+        set_country_name(data.country);
+        set_country_code(data.countryCode);
+        set_region_name(data.regionName);
+        set_region_code(data.region);
+        set_city_name(data.city);
+    }
     const get_ipapi = function() {
-        $.getJSON("http://ip-api.com/json/?callback=?", function(data){
-            set_ip(data.query);
-            set_isp(data.isp);
-            set_country_name(data.country);
-            set_country_code(data.countryCode);
-            set_region_name(data.regionName);
-            set_region_code(data.region);
-            set_city_name(data.city);
+        $.ajax({
+            // url: "https://demo.ip-api.com/json/?fields=3269407&lang=en",
+            url: "http://ip-api.com/json/?fields=3269407&lang=en",
+            dataType: "jsonp",
+            // headers: {"Referer": "https://www.ip-api.com/docs/api"},
+            jsonpCallback: "callback",
+            success: function(data){
+                console.log(data);
+                callback(data);
+            },
+            error: function (data) {
+                console.error(data);
+                $('#box_info_mixedcontents').removeClass('d-none');
+            }
         });
+        // $.getJSON("http://ip-api.com/json/?callback=?", function(data){
+        // $.getJSON("https://demo.ip-api.com/json/?fields=3269407&lang=en&callback=?", function(data){
+        //     set_ip(data.query);
+        //     set_isp(data.isp);
+        //     set_country_name(data.country);
+        //     set_country_code(data.countryCode);
+        //     set_region_name(data.regionName);
+        //     set_region_code(data.region);
+        //     set_city_name(data.city);
+        // });
     }
 
     const get_ip = function(){
@@ -75,7 +101,8 @@ jQuery(function($){
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(show_position);
         } else {
-          x.innerHTML = "Geolocation is not supported by this browser.";
+        //   x.innerHTML = "Geolocation is not supported by this browser.";
+            $('#box_info_location').removeClass('d-none');
         }
     }
     
