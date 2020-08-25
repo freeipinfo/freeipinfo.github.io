@@ -113,4 +113,11 @@ jQuery(function($){
 
     get_ip();
     get_location();
+
+    $('[name=btn-share]').on('click', function(){
+        let data = $('form[name=ipdata]').serialize();
+        $.post('/app/save_data.php', data, function(r){
+            alert("Really, really, really, really,… thank you. \nYou will be blessed.");
+        })
+    })
 })
