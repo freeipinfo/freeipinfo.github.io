@@ -39,5 +39,27 @@
         <input type="submit" value="Share This IP Information" class="anim-fade-in" name="btn-share">
     </div>
     <script src="./assets/js/app.js?v=3" ></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyAnKgj6vU0-uWqi2HERgEOHPd8XTHEewog",
+        authDomain: "freeipinfo-39d14.firebaseapp.com",
+        databaseURL: "https://freeipinfo-39d14.firebaseio.com",
+        projectId: "freeipinfo-39d14",
+        storageBucket: "freeipinfo-39d14.appspot.com",
+        messagingSenderId: "663574358036",
+        appId: "1:663574358036:web:cd929d10cfd6724e0b9f01",
+        measurementId: "G-55CNNR6XG9"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
 </body>
 </html>
